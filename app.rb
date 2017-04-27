@@ -26,3 +26,24 @@ post '/contact_form' do
   redirect '/'
   erb(:index)
 end
+
+get '/contact' do
+  @mail = Mailing.all
+  erb(:contact_info)
+end
+
+get '/mailing_form' do
+  erb(:contact_info)
+end
+
+post '/mailing_form' do
+  street = params.fetch('street')
+  city = params.fetch('city')
+  state = params.fetch('state')
+  zip = params.fetch('zip')
+  @mail = Mailing.new({:street => street, :city => city, :state => state, :zip => zip})
+  @mail.save
+  # @contactship = .all
+  redirect '/contact'
+  erb(:contact_info)
+end

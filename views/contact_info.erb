@@ -1,0 +1,60 @@
+<h1>Contact Info</h1>
+
+<h3>Add A Mailing Address:</h3>
+<form action="/mailing_form" method="post">
+  <label for="street">Street:</label>
+  <input id="street" name="street" type="text">
+
+  <label for="city">City:</label>
+  <input id="city" name="city" type="text">
+
+  <label for="state">State:</label>
+  <input id="state" name="state" type="text">
+
+  <label for="zip">Zip:</label>
+  <input id="zip" name="zip" type="text">
+
+  <button type="submit">Add Mailing Address</button>
+</form>
+
+<!-- <form action="/mailing_form" method="post">
+  <label for="street">Street:</label>
+  <input id="street" name="street" type="text">
+
+  <label for="city">City:</label>
+  <input id="city" name="city" type="text">
+
+  <label for="state">State:</label>
+  <input id="state" name="state" type="text">
+
+  <label for="zip">Zip:</label>
+  <input id="zip" name="zip" type="text">
+
+  <button type="submit">Add Mailing Address</button>
+</form>
+
+<form action="/mailing_form" method="post">
+  <label for="street">Street:</label>
+  <input id="street" name="street" type="text">
+
+  <label for="city">City:</label>
+  <input id="city" name="city" type="text">
+
+  <label for="state">State:</label>
+  <input id="state" name="state" type="text">
+
+  <label for="zip">Zip:</label>
+  <input id="zip" name="zip" type="text">
+
+  <button type="submit">Add Mailing Address</button>
+</form> -->
+
+
+<h3>Here are your contacts:</h3>
+<ul>
+  <% @mail.each() do |mail| %>
+    <li><%= mail.street() %> <%= mail.city() %> <%= mail.state() %> <%= mail.zip() %></li>
+  <% end %>
+</ul>
+
+<a href="/">Home</a>
